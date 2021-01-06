@@ -1,0 +1,3 @@
+class GuitarsController < ApplicationController
+
+end
