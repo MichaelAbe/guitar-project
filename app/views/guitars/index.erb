@@ -2,6 +2,6 @@
 
 <ul>
     <% @guitars.each do |guitar| %>
-        <li><%= guitar.year.to_s + " " + guitar.brand + " " + guitar.model %>
+        <li><a href='/guitars/<%= guitar.id %>'><%= guitar.year.to_s + " " + guitar.brand + " " + guitar.model%></a></li>
     <% end %>
 <ul>
