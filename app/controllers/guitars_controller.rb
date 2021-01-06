@@ -6,10 +6,15 @@ class GuitarsController < ApplicationController
 
     get '/guitars/new' do
         erb :'guitars/new'
-      end
+    end
+    
+    get '/guitars/:id' do
+        @guitar = Guitar.find_by_id(params[:id])
+        erb :'guitars/show'
+    end
 
     post '/guitars' do
-        binding.pry
+        #binding.pry
         guitar = Guitar.new(params[:guitar])
         if guitar.save
             redirect 'guitars'
