@@ -1,0 +1,39 @@
+<h1>Add Guitar</h1>
+
+<form action="/guitars" method="post">
+    <div class="input-field col s6">
+        <input id="brand" type="text" class="validate">
+        <label for="brand">Manufacturer</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="model" type="text" class="validate">
+        <label for="model">Model</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="year" type="text" class="validate">
+        <label for="year">Year</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="serial" type="text" class="validate">
+        <label for="serial">Serial Number</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="color" type="color" class="validate">
+        <label for="color"></label>
+    </div>
+    <div class="input-field col s6">
+        <input id="cost" type="text" class="validate">
+        <label for="cost">Cost</label>
+    </div>
+    <div class="input-field col s12">
+            <textarea id="notes" class="materialize-textarea" data-length="120"></textarea>
+            <label for="notes">Notes</label>
+    </div>  
+</form>
+
+<script>
+$(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+</script>
+
