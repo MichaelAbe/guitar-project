@@ -1,4 +1,8 @@
 class GuitarsController < ApplicationController
+    get '/guitars' do
+        @guitars = Guitar.all
+        erb :'guitars/index'
+    end
 
     get '/guitars/new' do
         erb :'guitars/new'

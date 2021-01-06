@@ -1,0 +1,7 @@
+<h2>My Guitars</h2>
+
+<ul>
+    <% @guitars.each do |guitar| %>
+        <li><%= guitar.year.to_s + " " + guitar.brand + " " + guitar.model %>
+    <% end %>
+<ul>
