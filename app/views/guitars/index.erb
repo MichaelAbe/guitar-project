@@ -6,7 +6,7 @@
     <% end %>
 <ul>
 
-
+<p>Recently Viewed: <%= @guitar ? @guitar.title : "Haven't viewed any guitars." %></p>
 
 <div> <% @guitars.each do |guitar| %>
   <div class="row">

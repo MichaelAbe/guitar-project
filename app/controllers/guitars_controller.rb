@@ -1,6 +1,7 @@
 class GuitarsController < ApplicationController
     get '/guitars' do
         @guitars = Guitar.all
+        @guitar = Guitar.find_by_id(session([:guitar_id]))
         erb :'guitars/index'
     end
 
@@ -16,6 +17,7 @@ class GuitarsController < ApplicationController
     
     get '/guitars/:id' do
         @guitar = Guitar.find_by_id(params[:id])
+        session[:guitar_id] = @guitar.id if @guitar
         redirect '/guitars' unless @guitar
         #binding.pry
         erb :'guitars/show'
