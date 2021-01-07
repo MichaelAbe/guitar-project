@@ -2,7 +2,25 @@
 
 <h2><%= @guitar.year.to_s + " " + @guitar.brand + " " + @guitar.model%></h2>
 <p>Serial Number: <%= @guitar.serial %></p>
+<p>Guitar Finish: <%= @guitar.color%></p>
+<p>Guitar Cost: <%= @guitar.cost%></p>
+<p>Special Notes: <%= @guitar.notes %></p>
 
 <a href="/guitars/:id/edit">Edit</a>
 
 <a class="<%= @guitar.color %> waves-effect waves-light btn-large"><i class="material-icons right">build</i>Edit</a>
+
+<form action='/guitars/<%= @guitar.id %>' method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Guitar">
+</form>
+
+
+
+t.string   "brand"
+    t.string   "model"
+    t.integer  "year"
+    t.string   "serial"
+    t.string   "color"
+    t.string   "cost"
+    t.string   "notes"
