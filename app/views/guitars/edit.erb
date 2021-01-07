@@ -3,37 +3,38 @@
 <h1>Edit <%= @guitar.year.to_s + " " + @guitar.brand + " " + @guitar.model%></h1>
 
 
-<form action="/guitars/" method="post">
+<form action="/guitars/<%= @guitar.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
     <div class="input-field col s6">
-        <input id="brand" name="guitar[brand]" type="text" class="validate">
+        <input id="brand" name="guitar[brand]" type="text" class="validate" value="<%= @guitar.brand %>">
         <label for="brand">Manufacturer</label>
     </div>
     <div class="input-field col s6">
-        <input id="model" name="guitar[model]" type="text" class="validate">
+        <input id="model" name="guitar[model]" type="text" class="validate" value="<%= @guitar.model %>">
         <label for="model">Model</label>
     </div>
     <div class="input-field col s6">
-        <input id="year" name="guitar[year]" type="text" class="validate">
+        <input id="year" name="guitar[year]" type="text" class="validate" value="<%= @guitar.year %>">
         <label for="year">Year</label>
     </div>
     <div class="input-field col s6">
-        <input id="serial" name="guitar[serial]" type="text" class="validate">
+        <input id="serial" name="guitar[serial]" type="text" class="validate" value="<%= @guitar.serial %>">
         <label for="serial">Serial Number</label>
     </div>
     <div class="input-field col s6">
-        <input id="color" name="guitar[color]" type="color" class="validate">
+        <input id="color" name="guitar[color]" type="color" class="validate" value="<%= @guitar.color %>">
         <label for="color"></label>
     </div>
     <div class="input-field col s6">
-        <input id="cost" name="guitar[cost]" type="text" class="validate">
+        <input id="cost" name="guitar[cost]" type="text" class="validate" value="<%= @guitar.cost %>">
         <label for="cost">Cost</label>
     </div>
-    <div class="input-field col s12">
-            <textarea id="notes" name="guitar[notes]" class="materialize-textarea" data-length="120"></textarea>
-            <label for="notes">Notes</label>
-    </div> 
-
-    <input type="submit" value="Add Guitar" class="grey darken-2 waves-effect waves-light btn-large">
+    <div class="input-field col s6">
+        <input id="notes" name="guitar[notes]" type="text" class="validate" value="<%= @guitar.notes %>">
+        <label for="notes">Notes</label>
+    </div>
+   
+    <input type="submit" value="Update Guitar" class="grey darken-2 waves-effect waves-light btn-large">
 
 
 </form>

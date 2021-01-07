@@ -28,4 +28,29 @@ class GuitarsController < ApplicationController
             redirect 'guitars/new'
         end
     end
+
+    patch '/guitars/:id' do
+        #binding.pry
+        @guitar = Guitar.find_by_id(params[:id])
+
+    if @guitar.update(params[:guitar])
+      redirect "/guitars/#{@guitar.id}"
+    else
+      redirect "/guitars/#{@guitar.id}/edit"
+    end
+    end
+
+    # patch '/guitars/:id/' do
+    #     "Hello World"
+    #   end
+
+    # patch '/guitars/:id/' do
+    #     #binding.pry
+    #     @guitar = Guitar.find_by_id(params[:id])
+    #     if @guitar.update(params[:guitar])
+    #         redirect 'guitars/#{@guitar.id}'
+    #     else
+    #         redirect 'guitars/#{@guitar.id}/edit'
+    #     end
+    # end
 end
