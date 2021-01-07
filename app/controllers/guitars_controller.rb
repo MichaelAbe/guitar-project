@@ -8,8 +8,14 @@ class GuitarsController < ApplicationController
         erb :'guitars/new'
     end
     
+    get '/guitars/:id/edit' do
+        @guitar = Guitar.find_by_id(params[:id])
+        erb :'guitars/edit'
+    end
+    
     get '/guitars/:id' do
         @guitar = Guitar.find_by_id(params[:id])
+        #binding.pry
         erb :'guitars/show'
     end
 

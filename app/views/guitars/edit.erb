@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<h1>Edit <%= @guitar.year.to_s + " " + @guitar.brand + " " + @guitar.model%></h1>
+
+
+<form action="/guitars/" method="post">
+    <div class="input-field col s6">
+        <input id="brand" name="guitar[brand]" type="text" class="validate">
+        <label for="brand">Manufacturer</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="model" name="guitar[model]" type="text" class="validate">
+        <label for="model">Model</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="year" name="guitar[year]" type="text" class="validate">
+        <label for="year">Year</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="serial" name="guitar[serial]" type="text" class="validate">
+        <label for="serial">Serial Number</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="color" name="guitar[color]" type="color" class="validate">
+        <label for="color"></label>
+    </div>
+    <div class="input-field col s6">
+        <input id="cost" name="guitar[cost]" type="text" class="validate">
+        <label for="cost">Cost</label>
+    </div>
+    <div class="input-field col s12">
+            <textarea id="notes" name="guitar[notes]" class="materialize-textarea" data-length="120"></textarea>
+            <label for="notes">Notes</label>
+    </div> 
+
+    <input type="submit" value="Add Guitar" class="grey darken-2 waves-effect waves-light btn-large">
+
+
+</form>
+
+<script>
+$(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+</script>
