@@ -1,7 +1,7 @@
 class GuitarsController < ApplicationController
     get '/guitars' do
         @guitars = Guitar.all
-        @guitar = Guitar.find_by_id(session([:guitar_id]))
+        @guitar = Guitar.find_by_id(session[:guitar_id])
         erb :'guitars/index'
     end
 

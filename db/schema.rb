@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210106185044) do
+ActiveRecord::Schema.define(version: 20210108150326) do
 
   create_table "guitars", force: :cascade do |t|
     t.string   "brand"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20210106185044) do
     t.string   "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
