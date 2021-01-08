@@ -23,11 +23,14 @@
     <div class="nav-wrapper container">
       <a href="/" class="brand-logo right">GL Home</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
+       <% if !is_logged_in? %>
         <li><a href="/signup">Signup</a></li>
         <li><a href="#">Login</a></li>
-        <li><a href="#">Logout</a></li>
+       <% else %>
+        <li><a href="/logout">Logout</a></li>
         <li><a href="/guitars">My Guitars</a></li>
         <li><a href="/guitars/new">Add Guitar</a></li>
+       <% end %>
       </ul>
     </div>
   </nav>

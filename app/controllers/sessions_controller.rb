@@ -14,4 +14,8 @@ class SessionsController < ApplicationController
         binding.pry
         end
     end
+
+    get '/logout' do
+        "Hello World"
+    end
 end
