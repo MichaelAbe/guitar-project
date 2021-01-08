@@ -1,0 +1,21 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<h2>Create New Account</h2>
+
+<form action="/signup" method="post">
+    <div class="input-field">
+        <input type="text" name="user[firstname]" id="firstname">
+        <label for="firstname">First Name</label>
+    <div>
+    <div class="input-field">
+        <input type="text" name="user[username]" id="username">
+        <label for="username">Username</label>
+    <div>
+     <div class="input-field">
+        <input type="password" name="user[password]" id="password">
+        <label for="password">Password</label>
+    <div>
+    <button class="btn-large waves-effect waves-light red" type="submit" name="action">Create Account
+        <i class="material-icons right">fiber_manual_record</i>
+    </button>
+</form>
