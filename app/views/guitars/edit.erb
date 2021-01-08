@@ -33,14 +33,12 @@
         <input id="notes" name="guitar[notes]" type="text" class="validate" value="<%= @guitar.notes %>">
         <label for="notes">Notes</label>
     </div>
-   
-    <input type="submit" value="Update Guitar" class="waves-effect waves-light btn"><i class="material-icons right">build</i>Edit</a>>
-    <form action='/guitars/<%= @guitar.id %>' method="post">
-   
-  
-</form>
 
-<a class="waves-effect waves-light btn"><i class="material-icons right">build</i>EDIT</a>
+    <button class="btn waves-effect waves-light orange large" type="submit" name="action">Update Guitar
+        <i class="material-icons right">build</i>
+    </button>
+            
+</form>
 
 
 </form>
