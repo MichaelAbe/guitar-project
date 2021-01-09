@@ -14,8 +14,8 @@ class GuitarsController < ApplicationController
     get '/guitars/:id/edit' do
         redirect_if_not_logged_in
         @guitar = Guitar.find_by_id(params[:id])
-        
         redirect '/guitars' unless @guitar
+        redirect_if_not_user
         erb :'guitars/edit'
     end
     
@@ -25,6 +25,7 @@ class GuitarsController < ApplicationController
         session[:guitar_id] = @guitar.id if @guitar
         redirect '/guitars' unless @guitar
         #binding.pry
+        redirect_if_not_user
         erb :'guitars/show'
     end
 
@@ -59,8 +60,9 @@ class GuitarsController < ApplicationController
       end
 
 
-    def redirect_if_not_owner
-        redirect '/guitars' unless @guitar.owner == current_user
+    def redirect_if_not_user
+        @guitar = Guitar.find_by_id(params[:id])
+        redirect '/guitars' unless @guitar.user == current_user
     end
   
     # patch '/guitars/:id/' do
