@@ -11,20 +11,6 @@
 <p>Guitar Cost: <%= @guitar.cost%></p>
 <p>Special Notes: <%= @guitar.notes %></p>
 
-<a href="/guitars/:id/edit">Edit</a>
-
-<a class="<%= @guitar.color %> waves-effect waves-light btn-large"><i class="material-icons right">build</i>Edit</a>
-
-<button class="btn-large waves-effect waves-light red white-text " action='/guitars/<%= @guitar.id %>' method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Guitar">
-</button>
-
-
-<button class="btn-large waves-effect waves-light orange large" type="submit" name="action">EDIT
-    <i class="material-icons right">build</i>
-</button>
-            
 
 <form action="/guitars/<%=@guitar.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
