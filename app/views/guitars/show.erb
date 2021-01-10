@@ -1,4 +1,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    .fit{
+        padding: 0px 0px 8px 0px;
+    }
+</style>
 
 <h2><%= @guitar.year.to_s + " " + @guitar.brand + " " + @guitar.model%></h2>
 <p>Serial Number: <%= @guitar.serial %></p>
@@ -21,11 +26,8 @@
 </button>
             
 
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-
 <form action="/guitars/<%=@guitar.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Guitar" class="btn-large red white-text ">
+  <button type="submit" class="btn-large red white-text "><div class="fit"><p>Delete<i class="large material-icons right">delete</i></p></div></button>
 </form>
+

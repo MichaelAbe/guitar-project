@@ -8,21 +8,14 @@
       }
 </style>
 
-<h2>My Guitars </h2>
+<h1>My Guitars </h1>
 
-<ul>
-    <% @guitars.each do |guitar| %>
-        <li><a href='/guitars/<%= guitar.id %>'><%= guitar.year.to_s + " " + guitar.brand + " " + guitar.model%></a></li>
-    <% end %>
-<ul>
-
-<p>Recently Viewed: <%= @guitar ? @guitar.model : "Haven't viewed any guitars." %></p>
 
 <div> <% @guitars.each do |guitar| %>
   <div class="row">
     <div class="col s12 m6">
       <div class="card" style="background: <%= guitar.color %>;">
-        <div class="card-content white-text">
+        <div class="card-content white-text  {outline: 1px solid #000000;} ">
           <span class="card-title"><%= guitar.year.to_s + " " + guitar.brand + " " + guitar.model%></span>
           <p>Serial Number: <%= guitar.serial %></p>
           <p>Cost: <%= guitar.cost %></p>
@@ -30,7 +23,6 @@
         </div>
         <div class="card-action">
           <a href='/guitars/<%= guitar.id %>/edit'>Edit this Guitar</a>
-          <a href="#">DELETE</a>
         </div>
       </div>
     </div>
